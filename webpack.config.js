@@ -5,22 +5,13 @@ const webpack = require('webpack');
 
 module.exports = {
   context: path.resolve(__dirname, './'),
-  entry: [
-    './src/index.js',
-    'webpack-hot-middleware/client'
-  ],
+  entry: {
+    app: ['webpack-hot-middleware/client', './src/index.js']
+  },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
     hot: true
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      }
-    ]
   },
   module: {
     rules: [
