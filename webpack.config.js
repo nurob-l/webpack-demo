@@ -6,7 +6,10 @@ const webpack = require('webpack');
 module.exports = {
   context: path.resolve(__dirname, './'),
   entry: {
-    app: ['webpack-hot-middleware/client', './src/index.js']
+    'index': [
+        'webpack-hot-middleware/client',
+        './src/index.js'
+    ]
   },
   devtool: 'inline-source-map',
   devServer: {
